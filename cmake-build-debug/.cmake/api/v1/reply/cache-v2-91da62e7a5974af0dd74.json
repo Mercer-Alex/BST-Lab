@@ -2,6 +2,42 @@
 	"entries" : 
 	[
 		{
+			"name" : "BST-Lab_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mercera/CLionProjects/BST-Lab/cmake-build-debug"
+		},
+		{
+			"name" : "BST-Lab_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "BST-Lab_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mercera/CLionProjects/BST-Lab"
+		},
+		{
 			"name" : "BST_Lab_BINARY_DIR",
 			"properties" : 
 			[
@@ -855,7 +891,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "BST_Lab"
+			"value" : "BST-Lab"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1136,6 +1172,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
+		},
+		{
+			"name" : "Project_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mercera/CLionProjects/BST-Lab/cmake-build-debug"
+		},
+		{
+			"name" : "Project_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Project_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mercera/CLionProjects/BST-Lab"
 		}
 	],
 	"kind" : "cache",

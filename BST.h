@@ -10,7 +10,7 @@ class BST: public BSTInterface {
 public:
     BST() {}
     ~BST() {
-        clear();
+        _clear(root);
     }
     //Please note that the class that implements this interface must be made
     //of objects which implement the NodeInterface
@@ -59,20 +59,12 @@ public:
         }
         if (node->getData() == item) {
              if (node->left == nullptr) {
-//                 node->setData(node->getRightChild()->getData());
-//                 Node<int>* tmp = node->getRightChild();
-//                 node->setRightChild(tmp->getRightChild());
-//                 node->setLeftChild(tmp->getLeftChild());
                 Node<int>* tmp = node;
                 node = node->right;
                 delete tmp;
                 return true;
              }
              else if (node->right == nullptr) {
-//                 node->setData(node->getLeftChild()->getData());
-//                 Node<int>* tmp = node->getLeftChild();
-//                 node->setRightChild(tmp->getRightChild());
-//                 node->setLeftChild(tmp->getLeftChild());
                 Node<int>* tmp = node;
                 node = node->left;
                 delete tmp;
@@ -105,9 +97,9 @@ public:
         _clear(this->root);
     }
 
-    void _clear(Node<int>* node) {
+    void _clear(Node<int>*& node) {
          if (node == nullptr) {
-             return;
+            return;
          }
          _clear(node->left);
          _clear(node->right);

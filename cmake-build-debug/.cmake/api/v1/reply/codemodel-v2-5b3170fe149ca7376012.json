@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "BST_Lab",
+					"name" : "BST-Lab",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "BST_Lab::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BST_Lab-Debug-a289d835a452ea31c45e.json",
-					"name" : "BST_Lab",
+					"id" : "BST-Lab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BST-Lab-Debug-457138c953091bf5968d.json",
+					"name" : "BST-Lab",
 					"projectIndex" : 0
 				}
 			]

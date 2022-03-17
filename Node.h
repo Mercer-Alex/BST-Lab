@@ -9,48 +9,51 @@ private:
     T value;
     Node<T>* left;
     Node<T>* right;
+    friend class BST;
+
 public:
     Node(T item) {
         value = item;
+        left = nullptr;
+        right = nullptr;
     }
     ~Node() {}
 
-    /*
-    * Returns the data that is stored in this node
-    *
-    * @return the data that is stored in this node.
-    */
     int getData() const {
         return value;
     }
 
-    void setData(T data) {
-        this->value = data;
-    }
+//    void setData(T data) {
+//        this->value = data;
+//    }
 
-    /*
-    * Returns the left child of this node or null if it doesn't have one.
-    *
-    * @return the left child of this node or null if it doesn't have one.
-    */
-    Node<T>* getLeftChild() const {
+    NodeInterface* getLeftChild() const {
         if (left == nullptr) {
             return nullptr;
         }
         return left;
     }
 
-    /*
-    * Returns the right child of this node or null if it doesn't have one.
-    *
-    * @return the right child of this node or null if it doesn't have one.
-    */
-    Node<T> * getRightChild() const {
+//    void setLeftChild(T data) {
+//        left = new Node<T>(data);
+//    }
+//    void setLeftChild(Node<T>* node) {
+//        left = node;
+//    }
+
+    NodeInterface* getRightChild() const {
         if (right == nullptr) {
             return nullptr;
         }
         return right;
     }
+
+//    void setRightChild(T data) {
+//        right = new Node<T>(data);
+//    }
+//    void setRightChild(Node<T>* node) {
+//        right = node;
+//    }
 
 };
 

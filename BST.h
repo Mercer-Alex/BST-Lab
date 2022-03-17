@@ -15,77 +15,91 @@ public:
     //Please note that the class that implements this interface must be made
     //of objects which implement the NodeInterface
 
-    /*
-    * Returns the root node for this tree
-    *
-    * @return the root node for this tree.
-    */
-    Node<int>* getRootNode() const {
+    NodeInterface* getRootNode() const {
         return root;
     }
 
     bool add(int data) {
+//        if (root == nullptr) {
+//            root = new Node<int>(data);
+//            return true;
+//        }
         return _add(this->root, data);
     }
-    bool _add(Node<int>* node, int item) {
+    bool _add(Node<int>*& node, int item) {
         if (node == nullptr) {
             node = new Node<int>(item);
             return true;
         }
-        if (node->getData() == item) {
+        if (node->value == item) {
             return false;
         }
-        else if (item < node->getData()) {
-            return _add(node->getLeftChild(), item);
+        else if (item < node->value) {
+//            if (node->left == nullptr) {
+//                node->value = item;
+//                return true;
+//            }
+            return _add(node->left, item);
         }
         else {
-            return _add(node->getRightChild(), item);
+//            if (node->getRightChild() == nullptr) {
+//                node->value = item;
+//                return true;
+//            }
+            return _add(node->right, item);
         }
     }
 
     bool remove(int data) {
         return _remove(this->root, data);
     }
-    bool _remove(Node<int>* node, int item) {
+    bool _remove(Node<int>*& node, int item) {
         if (node == nullptr) {
             return false;
         }
         if (node->getData() == item) {
-             if (node->getLeftChild() == nullptr) {
-                 auto tmp = node;
-                 node = node->getRightChild();
-                 delete tmp;
-                 return true;
+             if (node->left == nullptr) {
+//                 node->setData(node->getRightChild()->getData());
+//                 Node<int>* tmp = node->getRightChild();
+//                 node->setRightChild(tmp->getRightChild());
+//                 node->setLeftChild(tmp->getLeftChild());
+                Node<int>* tmp = node;
+                node = node->right;
+                delete tmp;
+                return true;
              }
-             else if (node->getRightChild() == nullptr) {
-                 auto tmp = node;
-                 node = node->getLeftChild();
-                 delete tmp;
-                 return true;
+             else if (node->right == nullptr) {
+//                 node->setData(node->getLeftChild()->getData());
+//                 Node<int>* tmp = node->getLeftChild();
+//                 node->setRightChild(tmp->getRightChild());
+//                 node->setLeftChild(tmp->getLeftChild());
+                Node<int>* tmp = node;
+                node = node->left;
+                delete tmp;
+                return true;
              }
              else {
                  //two children, swap iop
-                int iop_value = _get_iop_value(node);
-                node->setData(iop_value);
-                 _remove(node->getLeftChild(), iop_value);
+                int const& iop_value = _get_iop_value(node);
+                node->value = iop_value;
+                 _remove(node->left, iop_value);
                  return true;
              }
         }
-        else if (item < node->getData() ) {
-            return _remove(node->getLeftChild(), item);
+        else if (item < node->value) {
+            return _remove(node->left, item);
         }
         else {
-            return _remove(node->getRightChild(), item);
+            return _remove(node->right, item);
         }
     }
-    int _get_iop_value(Node<int>* node) {
-        auto tmp = node->getLeftChild();
-        while (tmp->getRightChild() != nullptr) {
-            tmp = tmp->getRightChild();
+    int _get_iop_value(Node<int>*const& node) {
+        auto tmp = node->left;
+        while (tmp->right != nullptr) {
+            tmp = tmp->right;
         }
-        return tmp->getData();
+        return tmp->value;
     }
-
 
     void clear() {
         _clear(this->root);
@@ -95,8 +109,8 @@ public:
          if (node == nullptr) {
              return;
          }
-         _clear(node->getLeftChild());
-         _clear(node->getRightChild());
+         _clear(node->left);
+         _clear(node->right);
          delete node;
     }
 

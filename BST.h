@@ -8,22 +8,18 @@ using namespace std;
 
 class BST: public BSTInterface {
 public:
-    BST() {}
+    BST() {
+        root = nullptr;
+    }
     ~BST() {
         _clear(root);
     }
-    //Please note that the class that implements this interface must be made
-    //of objects which implement the NodeInterface
 
     NodeInterface* getRootNode() const {
         return root;
     }
 
     bool add(int data) {
-//        if (root == nullptr) {
-//            root = new Node<int>(data);
-//            return true;
-//        }
         return _add(this->root, data);
     }
     bool _add(Node<int>*& node, int item) {
@@ -35,17 +31,9 @@ public:
             return false;
         }
         else if (item < node->value) {
-//            if (node->left == nullptr) {
-//                node->value = item;
-//                return true;
-//            }
             return _add(node->left, item);
         }
         else {
-//            if (node->getRightChild() == nullptr) {
-//                node->value = item;
-//                return true;
-//            }
             return _add(node->right, item);
         }
     }
@@ -71,7 +59,6 @@ public:
                 return true;
              }
              else {
-                 //two children, swap iop
                 int const& iop_value = _get_iop_value(node);
                 node->value = iop_value;
                  _remove(node->left, iop_value);
@@ -85,7 +72,7 @@ public:
             return _remove(node->right, item);
         }
     }
-    int _get_iop_value(Node<int>*const& node) {
+    int _get_iop_value(Node<int>* const& node) {
         auto tmp = node->left;
         while (tmp->right != nullptr) {
             tmp = tmp->right;
@@ -95,8 +82,8 @@ public:
 
     void clear() {
         _clear(this->root);
+        root = nullptr;
     }
-
     void _clear(Node<int>*& node) {
          if (node == nullptr) {
             return;
@@ -109,6 +96,5 @@ public:
 protected:
     Node<int>* root;
 };
-
 
 #endif //BST_LAB_BST_H

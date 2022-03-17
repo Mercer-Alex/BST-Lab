@@ -10,7 +10,8 @@ private:
     Node<T>* left;
     Node<T>* right;
 public:
-    Node() {
+    Node(T item) {
+        value = item;
     }
     ~Node() {}
 
@@ -23,12 +24,16 @@ public:
         return value;
     }
 
+    void setData(T data) {
+        this->value = data;
+    }
+
     /*
     * Returns the left child of this node or null if it doesn't have one.
     *
     * @return the left child of this node or null if it doesn't have one.
     */
-    NodeInterface * getLeftChild() const {
+    Node<T>* getLeftChild() const {
         if (left == nullptr) {
             return nullptr;
         }
@@ -40,7 +45,7 @@ public:
     *
     * @return the right child of this node or null if it doesn't have one.
     */
-    NodeInterface * getRightChild() const {
+    Node<T> * getRightChild() const {
         if (right == nullptr) {
             return nullptr;
         }

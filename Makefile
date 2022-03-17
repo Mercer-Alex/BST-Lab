@@ -1,4 +1,5 @@
 build:
-	g++ -g -std=c++11 -o test BST.h Node.h
+	g++ -g -o bst main.cpp
+
 test: build
-	valgrind --leak-check=full ./test
+	valgrind --leak-check=full ./bst

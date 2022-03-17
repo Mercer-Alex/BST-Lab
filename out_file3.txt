@@ -1,0 +1,116 @@
+Clear
+PrintBST
+BST is empty
+Add 9 True
+Add 99 True
+Add 999 True
+Add 9999 True
+Add 99999 True
+Add 999999 True
+Add 9999999 True
+Add 99999999 True
+Add 999999999 True
+Add 8 True
+Add 88 True
+Add 888 True
+Add 8888 True
+Add 88888 True
+Add 888888 True
+Add 8888888 True
+Add 88888888 True
+Add 7 True
+Add 77 True
+Add 777 True
+Add 7777 True
+Add 77777 True
+Add 777777 True
+Add 7777777 True
+Add 6 True
+Add 66 True
+Add 666 True
+Add 6666 True
+Add 66666 True
+Add 666666 True
+Add 5 True
+Add 55 True
+Add 555 True
+Add 5555 True
+Add 55555 True
+Add 4 True
+Add 44 True
+Add 444 True
+Add 4444 True
+Add 3 True
+Add 33 True
+Add 333 True
+Add 2 True
+Add 22 True
+Add 1 True
+PrintBST
+BST is empty
+Remove 22 False
+Remove 33 False
+Remove 44 False
+Remove 55 False
+Remove 66 False
+Remove 77 False
+Remove 88 False
+Remove 99 False
+PrintBST
+BST is empty
+Remove 4444 False
+Remove 5555 False
+Remove 6666 False
+Remove 7777 False
+Remove 8888 False
+Remove 9999 False
+PrintBST
+BST is empty
+Remove 666666 False
+Remove 777777 False
+Remove 888888 False
+Remove 999999 False
+PrintBST
+BST is empty
+Remove 88888888 False
+Remove 99999999 False
+PrintBST
+BST is empty
+Remove 999999999 False
+PrintBST
+BST is empty
+Remove 7777777 False
+Remove 8888888 False
+Remove 9999999 False
+PrintBST
+BST is empty
+Remove 55555 False
+Remove 66666 False
+Remove 77777 False
+Remove 88888 False
+Remove 99999 False
+PrintBST
+BST is empty
+Remove 333 False
+Remove 444 False
+Remove 555 False
+Remove 666 False
+Remove 777 False
+Remove 888 False
+Remove 999 False
+PrintBST
+BST is empty
+Remove 1 False
+Remove 2 False
+Remove 3 False
+Remove 4 False
+Remove 5 False
+Remove 6 False
+Remove 7 False
+Remove 8 False
+Remove 9 False
+PrintBST
+BST is empty
+Clear
+PrintBST
+BST is empty

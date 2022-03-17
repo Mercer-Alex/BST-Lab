@@ -6,15 +6,12 @@
 
 using namespace std;
 
-template<class T>
 class BST: public BSTInterface {
 public:
     BST() {}
     ~BST() {
         clear();
     }
-
-
     //Please note that the class that implements this interface must be made
     //of objects which implement the NodeInterface
 
@@ -23,22 +20,22 @@ public:
     *
     * @return the root node for this tree.
     */
-    NodeInterface * getRootNode() const {
-        return nullptr;
+    Node<int>* getRootNode() const {
+        return root;
     }
 
     bool add(int data) {
         return _add(this->root, data);
     }
-    bool _add(Node<T>*& node, T item) {
+    bool _add(Node<int>* node, int item) {
         if (node == nullptr) {
-            node = new Node<T>(item);
+            node = new Node<int>(item);
             return true;
         }
-        if (node->getData()  == item) {
+        if (node->getData() == item) {
             return false;
         }
-        else if (item < node->getData() ) {
+        else if (item < node->getData()) {
             return _add(node->getLeftChild(), item);
         }
         else {
@@ -49,7 +46,7 @@ public:
     bool remove(int data) {
         return _remove(this->root, data);
     }
-    bool _remove(Node<T>*& node, T item) {
+    bool _remove(Node<int>* node, int item) {
         if (node == nullptr) {
             return false;
         }
@@ -68,8 +65,8 @@ public:
              }
              else {
                  //two children, swap iop
-                T const* iop_value = _get_iop_value(node);
-                node->getData()  = iop_value;
+                int iop_value = _get_iop_value(node);
+                node->setData(iop_value);
                  _remove(node->getLeftChild(), iop_value);
                  return true;
              }
@@ -81,7 +78,7 @@ public:
             return _remove(node->getRightChild(), item);
         }
     }
-    T const& _get_iop_value(Node<T>*const& node) {
+    int _get_iop_value(Node<int>* node) {
         auto tmp = node->getLeftChild();
         while (tmp->getRightChild() != nullptr) {
             tmp = tmp->getRightChild();
@@ -94,7 +91,7 @@ public:
         _clear(this->root);
     }
 
-    void _clear(Node<T>*& node) {
+    void _clear(Node<int>* node) {
          if (node == nullptr) {
              return;
          }
@@ -104,7 +101,7 @@ public:
     }
 
 protected:
-    Node<T>* root;
+    Node<int>* root;
 };
 
 
